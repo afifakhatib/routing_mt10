@@ -1,0 +1,17 @@
+.mainNavbar.navbar-dark .navbar-nav .active > .nav-link,
+.mainNavbar.navbar-dark .navbar-nav .nav-link.active,
+.mainNavbar.navbar-dark .navbar-nav .nav-link.show,
+.mainNavbar.navbar-dark .navbar-nav .show > .nav-link {
+  color: #fff;
+  // background-color : orange;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(82, 34, 88),
+    rgb(140, 48, 97),
+    rgb(198, 60, 81),
+    rgb(217, 95, 89)
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size : 18px;
+}

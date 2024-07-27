@@ -1,0 +1,57 @@
+
+
+
+
+<div class="col-md-12">
+    <div class="userInfo">
+        <mat-card class="bg-info">
+            <mat-card-header>
+                <div class="userheading d-flex">
+                    <mat-icon class="mt-1">person</mat-icon>
+                    <h2 class="font-weight-bold ml-2">User Information</h2>
+                </div>
+            </mat-card-header>
+            <mat-divider class="bg-dark"></mat-divider>
+
+            <mat-card-content>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="userRole p-2">
+                        <strong> <h3 class="font-weight-bold text-center m-0"> UserRole : {{prodObj.canReturn}}  </h3></strong>
+                     </div>
+                     
+                     <div class="username text-center p-2">
+                         <strong> <h3 class="font-weight-bold m-0"> UserName : {{prodObj.pname}}  </h3></strong>
+                     </div>
+                     <div class="prodDetails text-center">
+                         <strong> <p class='m-0'> User Details : {{prodObj.productDescription}}
+                              </p></strong>
+                     </div>
+                     <mat-divider class="bg-dark mb-3"></mat-divider>
+
+                 <mat-card-actions>
+                    <div class="button">
+                        <button class="btn btn-sm" routerLink="editProd" [queryParamsHandling]="'preserve'"
+                        mat-raised-button color="accent">
+                             Edit Product
+                        </button>
+                        <button class="btn btn-sm ml-3" (click)="onProdRemove()" 
+                         mat-raised-button color="warn">
+                           Remove Product
+                        </button>
+                     </div>
+                 </mat-card-actions>
+                 
+                </div>
+
+                <div class="col-md-4">
+                    <div class="imgContainer text-center m-2">
+                        <img [src]="prodObj.productImg" [alt]="prodObj.pname" [title]="prodObj.pname">
+                    </div>
+                </div>
+            </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+
+
+
+<div class="button" align="end">
+    <button mat-fab color="primary" routerLink="addProd">
+        <mat-icon>add_circle</mat-icon>
+    </button>
+    <span class="ml-2 font-weight-bold add">Add product</span>
+</div>
+
+<mat-divider class="bg-light mb-2 mt-2"></mat-divider>
+
+<div class="col-md-6">
+ <div class="list-group">
+    <mat-list *ngIf="prodInfo.length > 0 ; else noProd">
+        <mat-list-item class="bg-dark text-white cursor" 
+        *ngFor="let prod of prodInfo ; let i = index"
+        [routerLink]="[prod.pId]" [queryParams]="{canEdit : prod.canReturn}">
+             {{i + 1}}] {{prod.pname}} {{prod.canReturn}}
+            <mat-divider class="bg-light"></mat-divider>
+        </mat-list-item>
+    </mat-list>
+ </div>
+
+ <ng-template #noProd>
+    <p class="alert alert-warning">No Product Info is addedd yet!!</p>
+ </ng-template>
+</div>
+
+<div class="col-md-6">
+
+</div>

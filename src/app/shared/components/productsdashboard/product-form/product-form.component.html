@@ -1,0 +1,78 @@
+
+<div class="col-md-8 offset-md-2">
+    <form [formGroup]="prodForm" (ngSubmit)="onProdAdd()">
+       <mat-card>
+           <mat-card-header>
+               <h1 class="text-dark font-weight-bold"> {{isinEditMode ? 'Update Product' : 'Add Product'}} </h1>
+           </mat-card-header>
+
+           <mat-divider class="bg-dark"></mat-divider>
+           <mat-card-content>
+
+               <div class="form-group">
+                   <mat-form-field class="example-full-width w-100" appearance="fill">
+                       <mat-label>Enter Product Name</mat-label>
+                       <input matInput placeholder="Ex. samsung s23" formControlName="pname">
+
+       
+                       <mat-error *ngIf="controls('pname').hasError('required')">
+                        prod name is <strong>required</strong>
+                      </mat-error>
+                     </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                   <mat-form-field class="example-full-width w-100" appearance="fill">
+                       <mat-label>Enter Product Details</mat-label>
+                       <textarea matInput placeholder="Ex.hello ! EveryOne this product is..." formControlName="productDescription">
+                           </textarea>
+
+                    
+                           <mat-error *ngIf="controls('productDescription').hasError('required')">
+                            product Description is <strong>required</strong>
+                          </mat-error>
+                     </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                   <mat-form-field class="example-full-width w-100" appearance="fill">
+                       <mat-label>Enter product Image</mat-label>
+                       <input matInput placeholder="Ex. ImageUrl" formControlName="productImg">
+
+                       <mat-error *ngIf="controls('productImg').hasError('required')">
+                        product img is <strong>required</strong>
+                      </mat-error>
+                      
+                     </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                   <mat-form-field class="example-full-width w-100" appearance="fill">
+                       <mat-label>Enter Can Return</mat-label>
+                       <mat-select  placeholder="Ex. admin" formControlName="canReturn">
+                           <mat-option value="0">0</mat-option>
+                           <mat-option value="1">1</mat-option>
+                        </mat-select>
+                    
+                        <mat-error *ngIf="controls('canReturn').hasError('required')">
+                            canReturn is <strong>required</strong>
+                          </mat-error>
+                     </mat-form-field>
+               </div>
+
+           </mat-card-content>
+           <mat-divider class="bg-dark"></mat-divider>
+           <mat-card-actions> 
+               <button class="btn btn-sm" type="submit" mat-raised-button color="primary" *ngIf="!isinEditMode">
+                   Add Product
+               </button>
+               <button class="btn btn-sm" type="button" (click)="onProdUpdate()"
+               mat-raised-button color="primary" *ngIf="isinEditMode">
+                   Update Product
+               </button>
+
+           </mat-card-actions>
+       </mat-card>
+    </form>
+</div>
+

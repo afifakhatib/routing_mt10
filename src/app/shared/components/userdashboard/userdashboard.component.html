@@ -1,0 +1,30 @@
+
+<div class="button" align="end">
+        <button mat-fab color="primary" routerLink="addUser">
+            <mat-icon>add_circle</mat-icon>
+        </button>
+        <span class="ml-2 font-weight-bold add">Add User</span>
+</div>
+
+<mat-divider class="bg-light mb-2 mt-2"></mat-divider>
+
+<div class="col-md-6">
+     <div class="list-group">
+        <mat-list *ngIf="userinfo.length > 0 ; else noUser">
+            <mat-list-item class="bg-dark text-white cursor" 
+            *ngFor="let user of userinfo ; let i = index"
+            [routerLink]="[user.userId]" [queryParams]="{userRole : user.userRole}">
+                 {{i + 1}}] {{user.userName}}
+                <mat-divider class="bg-light"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+     </div>
+
+     <ng-template #noUser>
+        <p class="alert alert-warning">No User Info is addedd yet!!</p>
+     </ng-template>
+</div>
+
+<div class="col-md-6">
+
+</div>
